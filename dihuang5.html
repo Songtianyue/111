@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>帝皇铠甲‑五行环绕</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background:#030310;
+            overflow:hidden;
+        }
+        .wrap{
+            width:100vw;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            position:relative;
+        }
+        .emperor{
+            width:320px;
+            height:420px;
+            position:relative;
+            z-index:2;
+        }
+        .head{
+            width:110px;
+            height:120px;
+            background:linear-gradient(135deg,#ffd700,#ffaa00,#cc8800);
+            border-radius:50% 50% 40% 40%;
+            margin:0 auto;
+            box-shadow: 0 0 40px #ffdd00,0 0 80px #ff9900;
+        }
+        .eye-left,.eye-right{
+            width:22px;
+            height:8px;
+            background:#ff2222;
+            position:absolute;
+            top:45px;
+            border-radius:4px;
+        }
+        .eye-left{
+            left:105px;
+        }
+        .eye-right{
+            right:105px;
+        }
+        .body-armor{
+            width:180px;
+            height:180px;
+            background:linear-gradient(180deg,#ffcc00,#dd9900,#b87000);
+            margin:-20px auto 0;
+            border-radius:20px;
+            box-shadow:0 0 50px #ffbb00;
+        }
+        .chest-gem{
+            width:45px;
+            height:45px;
+            background:radial-gradient(#ff2020,#aa0000);
+            border-radius:50%;
+            margin:30px auto;
+            box-shadow:0 0 25px red;
+        }
+        .title{
+            position:absolute;
+            bottom:40px;
+            width:100%;
+            text-align:center;
+            color:#ffd700;
+            font-size:26px;
+            font-weight:bold;
+            letter-spacing:4px;
+            text-shadow:0 0 15px gold;
+        }
+        /* 五行环绕光环动画 */
+        .orbit{
+            position:absolute;
+            width:480px;
+            height:480px;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            z-index:1;
+        }
+        .element{
+            position:absolute;
+            width:16px;
+            height:16px;
+            border-radius:50%;
+            box-shadow:0 0 22px 8px currentColor;
+        }
+        .fire{ color:#ff3300; animation:rot 8s linear infinite 0s; }    /*火 红*/
+        .wood{ color:#22ff44; animation:rot 8s linear infinite 1.6s; }  /*木 绿*/
+        .water{ color:#22ccff; animation:rot 8s linear infinite 3.2s; } /*水 蓝*/
+        .earth{ color:#cc9922; animation:rot 8s linear infinite 4.8s; }  /*土 棕黄*/
+        .thunder{ color:#ffff22; animation:rot 8s linear infinite 6.4s; }/*雷 黄*/
+
+        @keyframes rot{
+            0%{ transform: rotate(0deg) translateX(220px) rotate(0deg); }
+            100%{ transform: rotate(360deg) translateX(220px) rotate(-360deg); }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="orbit">
+        <div class="element fire"></div>
+        <div class="element wood"></div>
+        <div class="element water"></div>
+        <div class="element earth"></div>
+        <div class="element thunder"></div>
+    </div>
+
+    <div class="emperor">
+        <div class="head"></div>
+        <div class="eye-left"></div>
+        <div class="eye-right"></div>
+        <div class="body-armor">
+            <div class="chest-gem"></div>
+        </div>
+        <div class="title">帝皇铠甲</div>
+    </div>
+</div>
+</body>
+</html>
